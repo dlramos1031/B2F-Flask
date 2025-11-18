@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Claim Ticket</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light text-center">
+<div class="container mt-5">
+  <div class="card mx-auto" style="max-width:400px">
+    <div class="card-header bg-success text-white">
+      <h3>CLAIM TICKET</h3>
+    </div>
+    <div class="card-body">
+      <h4>{{ user.name }}</h4>
+      <p>Redeemed:</p>
+      <h2 class="text-success">{{ item }}</h2>
+      <p>Date: {{ "now"|strftime("%B %d, %Y") }}</p>
+      <h5>Show this to the coordinator!</h5>
+    </div>
+  </div>
+  <br>
+  <a href="/home" class="btn btn-success btn-lg">Back to Home</a>
+</div>
+</body>
+</html>

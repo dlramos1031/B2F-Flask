@@ -3,23 +3,32 @@
 <head>
   <title>Home • Bottle2Filament</title>
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <style>body{background:#f8f9fa}</style>
 </head>
 <body>
-  <div class="container mt-4">
-    <h2>Hi, {{ user.name }}!</h2>
-    <div class="alert alert-success">
-      <strong>{{ user.points }} points</strong>
-    </div>
-    <a href="/recycle" class="btn btn-success btn-lg w-100 mb-4">
-      START RECYCLING
-    </a>
-    <div class="row text-center">
-      <div class="col"><a href="/shop" class="btn btn-outline-success">Rewards Shop</a></div>
-      <div class="col"><a href="/profile" class="btn btn-outline-primary">Profile</a></div>
-      <div class="col"><a href="/manual" class="btn btn-outline-info">Help</a></div>
-    </div>
-    <hr>
-    <a href="/logout" class="btn btn-sm btn-danger">Logout</a>
+<div class="container mt-4">
+  <h2 class="text-success">Hi, {{ user.name }}!</h2>
+  <div class="alert alert-success text-center fs-3">
+    You have <strong>{{ user.points }} points</strong>
   </div>
+
+  {% if busy %}
+  <div class="alert alert-warning text-center">
+    Machine is being used by <strong>{{ busy_user }}</strong><br>
+    Please wait
+  </div>
+  {% else %}
+  <a href="/recycle" class="btn btn-success btn-lg w-100 mb-3" style="padding:30px;font-size:2rem">
+    START RECYCLING
+  </a>
+  {% endif %}
+
+  <div class="row g-3">
+    <div class="col-6"><a href="/shop" class="btn btn-outline-success w-100">Rewards Shop</a></div>
+    <div class="col-6"><a href="/profile" class="btn btn-outline-primary w-100">Profile</a></div>
+    <div class="col-6"><a href="/manual" class="btn btn-outline-info w-100">How to Use</a></div>
+    <div class="col-6"><a href="/logout" class="btn btn-outline-danger w-100">Logout</a></div>
+  </div>
+</div>
 </body>
 </html>

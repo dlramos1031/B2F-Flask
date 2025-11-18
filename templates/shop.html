@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rewards Shop</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+  <h2>Rewards Shop • You have {{ user.points }} points</h2>
+  <a href="/home" class="btn btn-sm btn-secondary mb-3">Back</a>
+  <div class="row">
+    {% for r in rewards %}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <h5>{{ r.name }}</h5>
+          <p class="text-success fs-4">{{ r.points }} points</p>
+          {% if r.stock > 0 %}
+          <a href="/redeem/{{ r.id }}" class="btn btn-success">REDEEM</a>
+          {% else %}
+          <button class="btn btn-secondary" disabled>Out of Stock</button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>
