@@ -1,7 +1,3 @@
-Here’s a **super fool-proof, copy-paste ready README.md** that even your most “click-click-lang” groupmate can follow.  
-Just create a file named `README.md` inside your `C:\bottle2filament` folder and paste this exact content.
-
-
 # Bottle2Filament - Local Website (Offline Version)
 
 **No internet needed • Works on your laptop first • Later copy to Raspberry Pi**
@@ -29,9 +25,11 @@ Still not working? Follow the steps below (with pictures in your mind).
 1. Open the folder `bottle2filament`
 2. **Double-click this file →** `RUN ME - Start Website.bat`
 3. A black window will open → wait until you see:
+   
    ```
    * Running on http://0.0.0.0:5000
    ```
+
 4. Open Chrome/Edge → type → `http://127.0.0.1:5000`
 5. Enjoy!
 
@@ -65,7 +63,7 @@ Just close the black window (or press Ctrl + C)
 2. Paste on Pi → open terminal → run the same `RUN ME - Start Website.bat` (we’ll make a Pi version later)
 
 ### Credits
-Made with love by [Your Group Name]  
+Made with love by Dave Lester Ramos
 USTP Cagayan de Oro • 2025  
 No internet? No problem!
 
