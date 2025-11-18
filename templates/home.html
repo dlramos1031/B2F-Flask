@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home • Bottle2Filament</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h2>Hi, {{ user.name }}!</h2>
+    <div class="alert alert-success">
+      <strong>{{ user.points }} points</strong>
+    </div>
+    <a href="/recycle" class="btn btn-success btn-lg w-100 mb-4">
+      START RECYCLING
+    </a>
+    <div class="row text-center">
+      <div class="col"><a href="/shop" class="btn btn-outline-success">Rewards Shop</a></div>
+      <div class="col"><a href="/profile" class="btn btn-outline-primary">Profile</a></div>
+      <div class="col"><a href="/manual" class="btn btn-outline-info">Help</a></div>
+    </div>
+    <hr>
+    <a href="/logout" class="btn btn-sm btn-danger">Logout</a>
+  </div>
+</body>
+</html>
