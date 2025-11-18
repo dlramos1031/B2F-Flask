@@ -1,7 +1,9 @@
 from flask import Flask, render_template, redirect, url_for, request, flash, session
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'bottle2filament_cdo_2025'
+app.jinja_env.filters['strftime'] = lambda date, fmt: datetime.now().strftime(fmt)
 
 # Fake data (will replace with SQLite later)
 current_user = {"name": "Guest", "points": 0}

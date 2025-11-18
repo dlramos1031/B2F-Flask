@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Claim Ticket</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claim Your Reward!</title>
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <style>
+    body { background: #16a085; color: white; }
+    .ticket { background: white; color: #16a085; border-radius: 20px; overflow: hidden; }
+    .header { background: #27ae60; padding: 20px; }
+  </style>
 </head>
-<body class="bg-light text-center">
+<body class="text-center">
 <div class="container mt-5">
-  <div class="card mx-auto" style="max-width:400px">
-    <div class="card-header bg-success text-white">
-      <h3>CLAIM TICKET</h3>
+  <div class="ticket mx-auto" style="max-width: 420px;">
+    <div class="header text-white">
+      <h2>CLAIM TICKET</h2>
+      <p class="mb-0">Bottle2Filament • USTP CDO</p>
     </div>
-    <div class="card-body">
-      <h4>{{ user.name }}</h4>
-      <p>Redeemed:</p>
-      <h2 class="text-success">{{ item }}</h2>
-      <p>Date: {{ "now"|strftime("%B %d, %Y") }}</p>
-      <h5>Show this to the coordinator!</h5>
+    <div class="p-4">
+      <h4 class="text-success">{{ user.name }}</h4>
+      <hr style="border-top: 3px dashed #16a085;">
+      <h1 class="display-5 text-success">{{ item }}</h1>
+      <p class="fs-4">Successfully Redeemed!</p>
+      <p>Date: {{ "now"|strftime("%B %d, %Y • %I:%M %p") }}</p>
+      <div class="bg-light rounded p-3 my-4">
+        <h3>Show this screen to the coordinator</h3>
+      </div>
+      <div class="text-center">
+        <h4>Remaining Points: {{ user.points }}</h4>
+      </div>
     </div>
   </div>
-  <br>
-  <a href="/home" class="btn btn-success btn-lg">Back to Home</a>
+
+  <div class="mt-4">
+    <a href="/home" class="btn btn-light btn-lg px-5">Back to Home</a>
+  </div>
+
+  <div class="mt-5">
+    <h3>Salamat sa pag-recycle!</h3>
+    <p>You made CDO cleaner today</p>
+  </div>
 </div>
 </body>
 </html>

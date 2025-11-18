@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile • Bottle2Filament</title>
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(to bottom, #16a085, #1abc9c); color: white; min-height: 100vh; }
+    .card { background: rgba(255,255,255,0.15); border: none; }
+  </style>
+</head>
+<body>
+<div class="container pt-5">
+  <div class="text-center mb-4">
+    <h1 class="display-5">Your Profile</h1>
+    <p class="lead">Salamat sa pag-recycle!</p>
+  </div>
+
+  <div class="card mx-auto" style="max-width: 500px;">
+    <div class="card-body text-center">
+      <div class="rounded-circle bg-light text-success mx-auto mb-3 d-flex align-items-center justify-content-center"
+           style="width:120px; height:120px; font-size:3rem; font-weight:bold;">
+        {{ user.name[0] }}
+      </div>
+      <h3>{{ user.name }}</h3>
+      <hr style="border-color: white;">
+      
+      <div class="row text-center">
+        <div class="col-12 mb-3">
+          <h2 class="display-4">{{ user.points }}</h2>
+          <p class="fs-4">Total Points</p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-6">
+          <div class="bg-white text-success rounded p-3">
+            <h5>≈ 17 bottles</h5>
+            <small>Recycled so far</small>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="bg-white text-success rounded p-3">
+            <h5>≈ 135 m</h5>
+            <small>Filament made</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <p class="text-warning fs-5">You saved the ocean from plastic!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="/home" class="btn btn-light btn-lg px-5">Back to Home</a>
+  </div>
+</div>
+</body>
+</html>
